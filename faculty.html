@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+* {
+  box-sizing: border-box;
+}
+
+#myInput {
+  background-image: url('/css/searchicon.png');
+  background-position: 10px 12px;
+  background-repeat: no-repeat;
+  width: 100%;
+  font-size: 16px;
+  padding: 12px 20px 12px 40px;
+  border: 1px solid #ddd;
+  margin-bottom: 12px;
+}
+
+#myUL {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+#myDropdown
+{
+width: 500px;  
+height: 300px;  
+overflow: scroll;  
+border: 1px solid red;  
+font-size: 25px;  
+position:absolute;
+left:100px;
+top:70px;
+}
+
+#myUL li a {
+  border: 1px solid #ddd;
+  margin-top: -1px; /* Prevent double borders */
+  background-color: #f6f6f6;
+  padding: 12px;
+  text-decoration: none;
+  font-size: 18px;
+  color: black;
+  display: block
+}
+
+#myUL li a:hover:not(.header) {
+  background-color: #eee;
+}
+</style>
+</head>
+<body>
+<h1 style="position:absolute;left:300px;">Faculty</h1>
+<div id="myDropdown" >
+
+<input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for names.." title="Type in a name">
+
+<ul id="myUL">
+    <li><a href="tablecreation.html">Ch.Sarada</a></li>
+    <li><a href="#base">A.Swathi</a></li>
+    <li><a href="#blog">SM Ali</a></li>
+    <li><a href="#contact">K.Giri Babu</a></li>
+    <li><a href="#custom">G.Swetha</a></li>
+    <li><a href="#support">D.Sujan Kumar</a></li>
+    <li><a href="#tools">Shaik Farhana</a></li>
+    <li><a href="#tools">G.Sushma</a></li>
+    <li><a href="#tools">G.Bala Krishna</a></li>
+    <li><a href="#tools">D.Sandhya Rani</a></li>
+    <li><a href="#tools">A.Vani Vathsala</a></li>
+    <li><a href="#tools">Ch.Ram Mohan</a></li>
+    <li><a href="#tools">S.Suguna Mallika</a></li>
+    <li><a href="#tools">N.Yadhagiri</a></li>
+    <li><a href="#tools">P.Kiran Kumar</a></li>
+    <li><a href="#tools">M.Sridevi</a></li>
+    <li><a href="#tools">V.Veerabadram</a></li>
+    <li><a href="#tools">G.Deepika</a></li>
+    <li><a href="#tools">B.Samya</a></li>
+    <li><a href="#tools">T.Radhika</a></li>
+    <li><a href="#tools">P.Sampurnima</a></li>
+    <li><a href="#tools">M.Archana</a></li>
+    <li><a href="#tools">M.Hanimi Reddy</a></li>
+    <li><a href="#tools">M.Swami Das</a></li>
+    <li><a href="#tools">G V Prasad</a></li>
+    <li><a href="#tools">G.Swetha</a></li></li>
+  </ul>
+</div>
+<script>
+function myFunction() {
+    var input, filter, ul, li, a, i, txtValue;
+    input = document.getElementById("myInput");
+    filter = input.value.toUpperCase();
+    ul = document.getElementById("myUL");
+    li = ul.getElementsByTagName("li");
+    for (i = 0; i < li.length; i++) {
+        a = li[i].getElementsByTagName("a")[0];
+        txtValue = a.textContent || a.innerText;
+        if (txtValue.toUpperCase().indexOf(filter) > -1) {
+            li[i].style.display = "";
+        } else {
+            li[i].style.display = "none";
+        }
+    }
+}
+</script>
+
+</body>
+</html>
